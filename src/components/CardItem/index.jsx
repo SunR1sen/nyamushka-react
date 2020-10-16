@@ -10,7 +10,8 @@ const CardItem = (props) => {
 
     return (
         <div className={s.cardItem}>
-            <Card filling={props.filling}
+            <Card name={props.name}
+                  filling={props.filling}
                   size={props.size}
                   extra={props.extra}
                   changeBottomText={setTextState}

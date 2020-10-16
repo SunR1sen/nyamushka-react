@@ -43,13 +43,12 @@ const Card = (props) => {
                 <div className={s.container}>
                     <p className={s.cardTop_title}>
                         {catDoesntLike ? <span className={s.catDontLike}>Котэ недоволен?</span> : 'Сказочное заморское яство'}
-
                     </p>
                 </div>
             </div>
 
             <div className={s.container}>
-                <CardHeader>Нямушка</CardHeader>
+                <CardHeader>{props.name}</CardHeader>
                 <Filling>{props.filling}</Filling>
                 <Extra>{props.extra}</Extra>
                 <Size size={props.size}/>

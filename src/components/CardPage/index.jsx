@@ -7,6 +7,7 @@ const CardPage = () => {
     const data = [
         {
             id: 1,
+            name: 'Нямушка',
             filling: 'с фуа-гра',
             size: '0,5',
             extra: {
@@ -26,6 +27,7 @@ const CardPage = () => {
         },
         {
             id: 2,
+            name: 'Нямушка',
             filling: 'с рыбой',
             size: '2',
             extra: {
@@ -45,6 +47,7 @@ const CardPage = () => {
         },
         {
             id: 3,
+            name: 'Нямушка',
             filling: 'с курой',
             size: '5',
             extra: {
@@ -69,7 +72,7 @@ const CardPage = () => {
             <h2 className={s.cardPageTitle}>Ты сегодня покормил кота?</h2>
             <div className={s.cardPageContent}>
                 {data.map( card => (
-                    <CardItem filling={card.filling} size={card.size} key={card.id} extra={card.extra}
+                    <CardItem name={card.name} filling={card.filling} size={card.size} key={card.id} extra={card.extra}
                     description={card.description} disabled={card.disabled} disabledText={card.disabledText}/>
                 ))}
             </div>

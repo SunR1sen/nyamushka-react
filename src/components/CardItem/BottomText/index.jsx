@@ -18,7 +18,7 @@ const BottomText = (props) => {
                     : <p className={s.bottomText}>
                     Чего сидишь? Порадуй котэ, <span className={s.buyLink} onClick={activeStateHandler}>купи</span>
                 </p>
-            }1
+            }
         </>
     )
 }

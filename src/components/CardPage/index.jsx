@@ -3,64 +3,75 @@ import s from './CardPage.module.scss';
 import CardItem from "../CardItem";
 
 const CardPage = () => {
-    // Я захардкодил эти объекты как имитацию того, что они пришли с сервера
-    const extraItems = {
-        withFuagra: {
-            portions: {
-                count: 10,
-                value: 'порций'
+    // Я захардкодил этот объект как имитацию того, что он пришёл с сервера
+    const data = [
+        {
+            id: 1,
+            filling: 'с фуа-гра',
+            size: '0,5',
+            extra: {
+                portions: {
+                    count: 10,
+                    value: 'порций'
+                },
+                gift: {
+                    count: 0,
+                    value: 'мышь в подарок'
+                },
+                happyClient: null
             },
-            gift: {
-                count: 0,
-                value: 'мышь в подарок'
-            },
-            happyClient: null
+            description: 'Печень утки разварная с артишоками',
+            disabled: false,
+            disabledText: 'Печалька, с фуа-гра закончился.',
         },
-        withFish: {
-            portions: {
-                count: 40,
-                value: 'порций'
+        {
+            id: 2,
+            filling: 'с рыбой',
+            size: '2',
+            extra: {
+                portions: {
+                    count: 40,
+                    value: 'порций'
+                },
+                gift: {
+                    count: 5,
+                    value: 'мышей в подарок'
+                },
+                happyClient: null
             },
-            gift: {
-                count: 2,
-                value: 'мыши в подарок'
-            },
-            happyClient: null
+            description: 'Головы щучьи с чесноком да свежайшая сёмгушка',
+            disabled: false,
+            disabledText: 'Печалька, с рыбой закончился.',
         },
-        withChicken: {
-            portions: {
-                count: 100,
-                value: 'порций'
+        {
+            id: 3,
+            filling: 'с курой',
+            size: '5',
+            extra: {
+                portions: {
+                    count: 100,
+                    value: 'порций'
+                },
+                gift: {
+                    count: 5,
+                    value: 'мышей в подарок'
+                },
+                happyClient: true
             },
-            gift: {
-                count: 5,
-                value: 'мышей в подарок'
-            },
-            happyClient: {
-                text: 'заказчик доволен'
-            }
-        }
-    }
-    const descriptions = {
-        fuagra: 'Печень утки разварная с артишоками',
-        fish: 'Головы щучьи с чесноком да свежайшая сёмгушка',
-        chicken: 'Филе из цыплят с трюфелями в бульоне',
-    }
-    const disabledText = {fuagra: 'Печалька, с фуа-гра закончился.',
-    fish: 'Печалька, с рыбой закончился',
-    chicken: 'Печалька, с курой закончился.'}
-
+            description: 'Филе из цыплят с трюфелями в бульоне',
+            disabled: true,
+            disabledText: 'Печалька, с курой закончился.',
+        },
+    ]
 
     return (
         <div className={s.cardPage}>
             <h2 className={s.cardPageTitle}>Ты сегодня покормил кота?</h2>
             <div className={s.cardPageContent}>
-                <CardItem filling='с фуа-гра' size='0,5' extra={extraItems.withFuagra}
-                          description={descriptions.fuagra} disabled={false} disabledText={disabledText.fuagra}/>
-                <CardItem filling='с рыбой' size='2' extra={extraItems.withFish}
-                          description={descriptions.fish} disabled={false} disabledText={disabledText.fish}/>
-                <CardItem filling='с курицей' size='5' extra={extraItems.withChicken}
-                          description={descriptions.chicken} disabled={true} disabledText={disabledText.chicken}/>
+                {data.map( card => (
+                    <CardItem filling={card.filling} size={card.size} key={card.id} extra={card.extra}
+                    description={card.description} disabled={card.disabled} disabledText={card.disabledText}/>
+                ))}
             </div>
         </div>
     )

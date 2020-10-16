@@ -7,18 +7,44 @@ import Extra from "./Extra";
 import Size from "./Size";
 
 const Card = (props) => {
-    const [state, setState] = useState(false);
+    const [catDoesntLike, setCatDoesntLike] = useState(false);
 
     const clickHandler = () => {
-        props.changeBottomText();
-        setState(!state);
+        props.setActiveState(!props.activeState);
+    }
+
+    const onMouseLeaveHandler = () => {
+        if (props.activeState) {
+            props.setSelectDone(true);
+            props.changeBottomText(false);
+        } else {
+            props.setSelectDone(false);
+            props.changeBottomText(true);
+        }
+
+        if(props.selectDone) {
+            setCatDoesntLike(false)
+        }
+    }
+
+    const onMouseEnterHandler = () => {
+        if (props.selectDone) {
+            setCatDoesntLike(true);
+        }
     }
 
     return (
-        <div className={cl(s.cardBody, {[s.active]: state})} onClick={clickHandler}>
+        <div onMouseLeave={onMouseLeaveHandler} onMouseEnter={onMouseEnterHandler}
+             className={cl(s.cardBody, {[s.active]: props.selectDone}, {[s.disabled]: props.disabled})}
+             onClick={props.disabled ? null : clickHandler}>
+            {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverBody)} />}
             <div className={s.cardTop}>
+                {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverTop)} />}
                 <div className={s.container}>
-                    <p className={s.cardTop_title}>Сказочное заморское яство</p>
+                    <p className={s.cardTop_title}>
+                        {catDoesntLike ? <span className={s.catDontLike}>Котэ недоволен?</span> : 'Сказочное заморское яство'}
+
+                    </p>
                 </div>
             </div>
 

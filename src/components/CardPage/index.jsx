@@ -46,13 +46,22 @@ const CardPage = () => {
         fish: 'Головы щучьи с чесноком да свежайшая сёмгушка',
         chicken: 'Филе из цыплят с трюфелями в бульоне',
     }
+    const disabledText = {fuagra: 'Печалька, с фуа-гра закончился.',
+    fish: 'Печалька, с рыбой закончился',
+    chicken: 'Печалька, с курой закончился.'}
 
 
     return (
         <div className={s.cardPage}>
-            <CardItem filling='с фуа-гра' size='0,5' extra={extraItems.withFuagra} description={descriptions.fuagra} disabled={false}/>
-            <CardItem filling='с рыбой' size='2' extra={extraItems.withFish} description={descriptions.fish}/>
-            <CardItem filling='с курицей' size='5' extra={extraItems.withChicken} description={descriptions.chicken}/>
+            <h2 className={s.cardPageTitle}>Ты сегодня покормил кота?</h2>
+            <div className={s.cardPageContent}>
+                <CardItem filling='с фуа-гра' size='0,5' extra={extraItems.withFuagra}
+                          description={descriptions.fuagra} disabled={false} disabledText={disabledText.fuagra}/>
+                <CardItem filling='с рыбой' size='2' extra={extraItems.withFish}
+                          description={descriptions.fish} disabled={false} disabledText={disabledText.fish}/>
+                <CardItem filling='с курицей' size='5' extra={extraItems.withChicken}
+                          description={descriptions.chicken} disabled={true} disabledText={disabledText.chicken}/>
+            </div>
         </div>
     )
 }

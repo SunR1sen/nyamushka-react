@@ -78,6 +78,54 @@
   }
 }
 
+.disabled {
+  border-color: $disabledColor;
+  cursor: not-allowed;
+
+  &:after {
+    border-color: $disabledColor;
+  }
+  .cardTop {
+    border-color: $disabledColor;
+  }
+
+  .sizeWrapper {
+    background-color: $disabledColor;
+  }
+}
+
+.disabled:hover {
+  border-color: $disabledColor;
+
+  &:after {
+    border-color: $disabledColor;
+  }
+  .cardTop {
+    border-color: $disabledColor;
+  }
+  .sizeWrapper {
+    background-color: $disabledColor;
+  }
+}
+
+.disabledCover {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.disabledCoverTop {
+  border-top-right-radius: 6px;
+}
+
+.disabledCoverBody {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
 .sizeWrapper {
   position: absolute;
   bottom: 12px;
@@ -123,6 +171,11 @@
     font-size: 16px;
     color: $grayText;
   }
+}
+
+.catDontLike {
+  color: $selectedHoverColor;
+  font-size: 16px;
 }
 
 

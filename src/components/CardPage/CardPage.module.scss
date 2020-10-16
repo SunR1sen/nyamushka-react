@@ -1,9 +1,23 @@
 .cardPage {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
   min-height: 100vh;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%),
               url("./background.png");
+}
+
+.cardPageTitle {
+  font-family: 'Exo2', sans-serif;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
+
+.cardPageContent {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
 }

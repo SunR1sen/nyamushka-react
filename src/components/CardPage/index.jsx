@@ -51,8 +51,8 @@ const CardPage = () => {
     return (
         <div className={s.cardPage}>
             <CardItem filling='с фуа-гра' size='0,5' extra={extraItems.withFuagra} description={descriptions.fuagra} disabled={false}/>
-            {/*<CardItem filling='с рыбой' extra={extraItems.withFish} description={descriptions.fish}/>*/}
-            {/*<CardItem filling='с курицей' extra={extraItems.withChicken} description={descriptions.chicken}/>*/}
+            <CardItem filling='с рыбой' size='2' extra={extraItems.withFish} description={descriptions.fish}/>
+            <CardItem filling='с курицей' size='5' extra={extraItems.withChicken} description={descriptions.chicken}/>
         </div>
     )
 }

@@ -3,8 +3,6 @@ import s from './Extra.module.scss';
 
 const Extra = (props) => {
     const {portions, gift, happyClient} = props.children;
-    console.log(props)
-
 
     return (
         <div className={s.wrapper}>

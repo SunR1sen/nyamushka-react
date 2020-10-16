@@ -1,0 +1,23 @@
+@import '../../../assets/variables';
+
+.sizeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  line-height: 1;
+  border-radius: 50%;
+  background-color: $defaultBorderColor;
+}
+
+.amount {
+  color: #fff;
+  font-size: 42px;
+}
+
+.units {
+  font-size: 21px;
+  color: #fff;
+}

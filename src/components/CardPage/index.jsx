@@ -1,9 +1,9 @@
 import React from 'react';
-import Card from "../Card";
 import s from './CardPage.module.scss';
+import CardItem from "../CardItem";
 
 const CardPage = () => {
-    // Я захардкодил этот объект как имитацию того, что он пришёл с сервера
+    // Я захардкодил эти объекты как имитацию того, что они пришли с сервера
     const extraItems = {
         withFuagra: {
             portions: {
@@ -41,16 +41,18 @@ const CardPage = () => {
             }
         }
     }
-
-    const handleClick = () => {
-        console.log('Click from CardPage');
+    const descriptions = {
+        fuagra: 'Печень утки разварная с артишоками',
+        fish: 'Головы щучьи с чесноком да свежайшая сёмгушка',
+        chicken: 'Филе из цыплят с трюфелями в бульоне',
     }
+
 
     return (
         <div className={s.cardPage}>
-            <Card filling='c фуа-гра' extra={extraItems.withFuagra} handleClick={handleClick}/>
-            {/*<Card filling='c рыбой' extra={extraItems.withFish}/>*/}
-            {/*<Card filling='c курицей' extra={extraItems.withChicken}/>*/}
+            <CardItem filling='с фуа-гра' size='0,5' extra={extraItems.withFuagra} description={descriptions.fuagra} disabled={false}/>
+            {/*<CardItem filling='с рыбой' extra={extraItems.withFish} description={descriptions.fish}/>*/}
+            {/*<CardItem filling='с курицей' extra={extraItems.withChicken} description={descriptions.chicken}/>*/}
         </div>
     )
 }

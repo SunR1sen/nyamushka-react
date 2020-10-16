@@ -1,0 +1,17 @@
+.bottomText {
+  color: #fff;
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+
+  .buyLink {
+    cursor: pointer;
+    color: #1698D9;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+
+    &:hover {
+      color: #22A7E9;
+    }
+  }
+}

@@ -48,6 +48,36 @@
   }
 }
 
+.active {
+  border-color: $selectedColor;
+
+  &:after {
+    border-color: $selectedColor;
+  }
+
+  .cardTop {
+    border-color: $selectedColor;
+  }
+
+  .sizeWrapper {
+    background-color: $selectedColor;
+  }
+}
+
+.active:hover {
+  border-color: $selectedHoverColor;
+
+  &:after {
+    border-color: $selectedHoverColor;
+  }
+  .cardTop {
+    border-color: $selectedHoverColor;
+  }
+  .sizeWrapper {
+    background-color: $selectedHoverColor;
+  }
+}
+
 .sizeWrapper {
   position: absolute;
   bottom: 12px;
@@ -66,11 +96,13 @@
     color: #fff;
     font-size: 42px;
   }
+
   .units {
     font-size: 21px;
     color: #fff;
   }
 }
+
 .cardTop {
   padding-left: 4px;
   padding-right: 4px;

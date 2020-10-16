@@ -1,0 +1,16 @@
+@import "../../../assets/variables";
+
+.wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.extraItem {
+  font-size: 14px;
+  color: $grayText;
+}
+
+.count {
+  font-weight: 700;
+}

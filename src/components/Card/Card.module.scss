@@ -1,16 +1,19 @@
 @import './src/assets/variables';
 
+.container {
+  width: 100%;
+  max-width: 205px;
+  margin: 0 0 0 48px;
+}
+
 .cardBody {
   position: relative;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   width: 320px;
   height: 439px;
   margin-top: 70px;
-  background-color: $cardBgColor;
+  background: $cardBgColor url("./catBg.png") no-repeat;
+  background-position: -5px 170px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-left: $borderSize solid $defaultBorderColor;
@@ -22,16 +25,27 @@
     top: 0;
     left: 0;
     position: absolute;
-    transform: rotate(-45deg) translate(8px, -24px);
-    width: 63px;
+    transform: rotate(-44.5deg) translate(8px, -24.8px);
+    width: 64px;
     border-top: $borderSize solid $defaultBorderColor;
+  }
+
+  &:hover {
+    border-color: $defaultHoverBorderColor;
+
+    &:after {
+      border-color: $defaultHoverBorderColor;
+    }
+
+    .cardTop {
+      border-color: $defaultHoverBorderColor;
+    }
   }
 }
 .cardTop {
+  padding-left: 4px;
+  padding-right: 4px;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   bottom: 100%;
   right: -4px;
   left: -3px;
@@ -41,16 +55,13 @@
   border-right: $borderSize solid $defaultBorderColor;
   border-top-right-radius: 10px;
   clip-path: polygon(45px 0, 100% 0, 100% 100%, 0% 100%);
-}
 
-.cardBody:hover {
-  border-color: $defaultHoverBorderColor;
-
-  &:after {
-    border-color: $defaultHoverBorderColor;
-  }
-
-  .cardTop {
-    border-color: $defaultHoverBorderColor;
+  &_title {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    color: $grayText;
   }
 }
+
+

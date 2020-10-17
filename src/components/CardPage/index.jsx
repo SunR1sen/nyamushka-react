@@ -36,8 +36,8 @@ const CardPage = () => {
                     value: 'порций'
                 },
                 gift: {
-                    count: 5,
-                    value: 'мышей в подарок'
+                    count: 2,
+                    value: 'мыши в подарок'
                 },
                 happyClient: false
             },

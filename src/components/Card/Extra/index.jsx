@@ -7,11 +7,11 @@ const Extra = (props) => {
     return (
         <div className={s.wrapper}>
             <span className={s.extraItem}>
-                {portions.count ? <span className={s.count}>{portions.count} </span> : ''}
+                {portions.count && <span className={s.count}>{portions.count} </span>}
                 {portions.value}
             </span>
             <span className={s.extraItem}>
-                {gift.count ? <span className={s.count}>{gift.count} </span> : ''}
+                {gift.count !== 0 && <span className={s.count}>{gift.count} </span>}
                 {gift.value}
             </span>
             <span className={s.extraItem}>

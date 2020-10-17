@@ -1,6 +1,9 @@
 @import '../../../assets/variables';
 
 .sizeWrapper {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;

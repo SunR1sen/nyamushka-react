@@ -25,46 +25,46 @@ const CardPage = () => {
             disabled: false,
             disabledText: 'Печалька, с фуа-гра закончился.',
         },
-        // {
-        //     id: 2,
-        //     name: 'Нямушка',
-        //     filling: 'с рыбой',
-        //     size: '2',
-        //     extra: {
-        //         portions: {
-        //             count: 40,
-        //             value: 'порций'
-        //         },
-        //         gift: {
-        //             count: 5,
-        //             value: 'мышей в подарок'
-        //         },
-        //         happyClient: false
-        //     },
-        //     description: 'Головы щучьи с чесноком да свежайшая сёмгушка',
-        //     disabled: false,
-        //     disabledText: 'Печалька, с рыбой закончился.',
-        // },
-        // {
-        //     id: 3,
-        //     name: 'Нямушка',
-        //     filling: 'с курой',
-        //     size: '5',
-        //     extra: {
-        //         portions: {
-        //             count: 100,
-        //             value: 'порций'
-        //         },
-        //         gift: {
-        //             count: 5,
-        //             value: 'мышей в подарок'
-        //         },
-        //         happyClient: true
-        //     },
-        //     description: 'Филе из цыплят с трюфелями в бульоне',
-        //     disabled: true,
-        //     disabledText: 'Печалька, с курой закончился.',
-        // },
+        {
+            id: 2,
+            name: 'Нямушка',
+            filling: 'с рыбой',
+            size: '2',
+            extra: {
+                portions: {
+                    count: 40,
+                    value: 'порций'
+                },
+                gift: {
+                    count: 5,
+                    value: 'мышей в подарок'
+                },
+                happyClient: false
+            },
+            description: 'Головы щучьи с чесноком да свежайшая сёмгушка',
+            disabled: false,
+            disabledText: 'Печалька, с рыбой закончился.',
+        },
+        {
+            id: 3,
+            name: 'Нямушка',
+            filling: 'с курой',
+            size: '5',
+            extra: {
+                portions: {
+                    count: 100,
+                    value: 'порций'
+                },
+                gift: {
+                    count: 5,
+                    value: 'мышей в подарок'
+                },
+                happyClient: true
+            },
+            description: 'Филе из цыплят с трюфелями в бульоне',
+            disabled: true,
+            disabledText: 'Печалька, с курой закончился.',
+        },
     ]
 
     return (

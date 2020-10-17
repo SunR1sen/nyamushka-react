@@ -1,5 +1,5 @@
 @import './src/assets/variables';
-@import './Size/Size.module.scss';
+@import 'Size/Size.module';
 
 .container {
   width: 100%;
@@ -13,6 +13,7 @@
 
 .corner {
   position: absolute;
+  z-index: 100;
   top: 46px;
   left: 14px;
   width: 63px;
@@ -22,15 +23,6 @@
   transform-origin: 0 100%;
 }
 
-//.corner2 {
-//  position: absolute;
-//  top: 0;
-//  left: 10px;
-//  width: 46px;
-//  height: 4px;
-//  background-color: red;
-//}
-
 .cardBody {
   position: relative;
   cursor: pointer;
@@ -39,50 +31,31 @@
   margin: 70px 10px 0;
   background: $cardBgColor url("./catBg.png") no-repeat;
   background-position: -5px 100%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-left: $borderSize solid $defaultBorderColor;
-  border-right: $borderSize solid $defaultBorderColor;
-  border-bottom: $borderSize solid $defaultBorderColor;
-  border-top: $borderSize solid $defaultBorderColor;
+  border-radius: 10px;
+  border: $borderSize solid $defaultBorderColor;
   clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 48.5px);
 
-  //&:after {
-  //  content: '';
-  //  top: 0;
-  //  left: 0;
-  //  position: absolute;
-  //  transform: rotate(-44.5deg) translate(8px, -24.8px);
-  //  width: 64px;
-  //  border-top: $borderSize solid $defaultBorderColor;
-  //}
 
-  &:hover {
-    border-color: $defaultHoverBorderColor;
+}
 
-    &:after {
-      border-color: $defaultHoverBorderColor;
-    }
+.cardBody:hover {
+  border-color: $defaultHoverBorderColor;
 
-    .cardTop {
-      border-color: $defaultHoverBorderColor;
-    }
+  & ~ .corner {
+    background-color: $defaultHoverBorderColor;
+  }
 
-    .sizeWrapper {
-      background-color: $defaultHoverBorderColor;
-    }
+  .sizeWrapper {
+    background-color: $defaultHoverBorderColor;
   }
 }
+
 
 .active {
   border-color: $selectedColor;
 
-  &:after {
-    border-color: $selectedColor;
-  }
-
-  .cardTop {
-    border-color: $selectedColor;
+  & ~ .corner {
+    background-color: $selectedColor;
   }
 
   .sizeWrapper {
@@ -93,12 +66,10 @@
 .active:hover {
   border-color: $selectedHoverColor;
 
-  &:after {
-    border-color: $selectedHoverColor;
+  & ~ .corner {
+    background-color: $selectedHoverColor;
   }
-  .cardTop {
-    border-color: $selectedHoverColor;
-  }
+
   .sizeWrapper {
     background-color: $selectedHoverColor;
   }
@@ -108,11 +79,8 @@
   border-color: $disabledColor;
   cursor: not-allowed;
 
-  &:after {
-    border-color: $disabledColor;
-  }
-  .cardTop {
-    border-color: $disabledColor;
+  & ~ .corner {
+    background-color: $disabledColor;
   }
 
   .sizeWrapper {
@@ -123,12 +91,10 @@
 .disabled:hover {
   border-color: $disabledColor;
 
-  &:after {
-    border-color: $disabledColor;
+  & ~ .corner {
+    background-color: $disabledColor;
   }
-  .cardTop {
-    border-color: $disabledColor;
-  }
+
   .sizeWrapper {
     background-color: $disabledColor;
   }
@@ -140,68 +106,6 @@
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.7);
-}
-
-.disabledCoverTop {
-  border-top-right-radius: 6px;
-}
-
-.disabledCoverBody {
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-
-
-.sizeWrapper {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  line-height: 1;
-  border-radius: 50%;
-  background-color: $defaultBorderColor;
-
-  .amount {
-    color: #fff;
-    font-size: 42px;
-  }
-
-  .units {
-    font-size: 21px;
-    color: #fff;
-  }
-}
-
-.cardTop {
-  padding-left: 4px;
-  padding-right: 4px;
-  position: absolute;
-  bottom: 100%;
-  right: -4px;
-  left: -3px;
-  height: 45px;
-  background-color: $cardBgColor;
-  border-top: $borderSize solid $defaultBorderColor;
-  border-right: $borderSize solid $defaultBorderColor;
-  border-top-right-radius: 10px;
-  clip-path: polygon(45px 0, 100% 0, 100% 100%, 0% 100%);
-
-  &_title {
-    margin-top: 20px;
-    font-weight: 400;
-    font-size: 16px;
-    color: $grayText;
-  }
-}
-
-.catDontLike {
-  color: $selectedHoverColor;
-  font-size: 16px;
 }
 
 

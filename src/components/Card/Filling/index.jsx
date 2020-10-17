@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './Filling.module.scss';
 
-const Filling = ({children}) => {
+const Filling = ({filling}) => {
     return (
-        <span className={s.filling}>{children}</span>
+        <span className={s.filling}>{filling}</span>
     )
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Extra.module.scss';
 
 const Extra = (props) => {
-    const {portions, gift, happyClient} = props.children;
+    const {portions, gift, happyClient} = props.extra;
 
     return (
         <div className={s.wrapper}>

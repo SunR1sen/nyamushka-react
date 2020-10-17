@@ -1,9 +1,9 @@
 import React from 'react';
 import s from "./CardHeader.module.scss";
 
-const CardHeader = ({children}) => {
+const CardHeader = ({name}) => {
     return (
-        <h3 className={s.cardHeader}>{children}</h3>
+        <h3 className={s.cardHeader}>{name}</h3>
     )
 }
 

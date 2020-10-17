@@ -48,9 +48,9 @@ const Card = (props) => {
             </div>
 
             <div className={s.container}>
-                <CardHeader>{props.name}</CardHeader>
-                <Filling>{props.filling}</Filling>
-                <Extra>{props.extra}</Extra>
+                <CardHeader name={props.name}/>
+                <Filling filling={props.filling} />
+                <Extra extra={props.extra} />
                 <Size size={props.size}/>
             </div>
         </div>

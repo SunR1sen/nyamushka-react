@@ -6,7 +6,7 @@ const CardTop = (props) => {
         <div className={s.wrapper}>
             {props.dontLike
                 ? <span className={s.catDontLike}>Котэ недоволен?</span>
-                : <span className={s.defaultText}>Сказочное заморское яство</span>
+                : <span className={s.defaultText}>Сказочное&nbsp;заморское&nbsp;яство</span>
             }
         </div>
     )

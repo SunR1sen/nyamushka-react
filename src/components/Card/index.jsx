@@ -40,7 +40,7 @@ const Card = (props) => {
                  className={cl(s.cardBody, {[s.active]: props.selectDone}, {[s.disabled]: props.disabled})}
                  onClick={props.disabled ? null : clickHandler}>
 
-                {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverBody)}/>}
+                {props.disabled && <div className={s.disabledCover}/>}
 
                 <div className={s.container}>
                     <CardTop dontLike={catDoesntLike}/>

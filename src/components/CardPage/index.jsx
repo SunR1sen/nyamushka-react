@@ -19,7 +19,7 @@ const CardPage = () => {
                     count: 0,
                     value: 'мышь в подарок'
                 },
-                happyClient: null
+                happyClient: false
             },
             description: 'Печень утки разварная с артишоками',
             disabled: false,
@@ -39,7 +39,7 @@ const CardPage = () => {
                     count: 5,
                     value: 'мышей в подарок'
                 },
-                happyClient: null
+                happyClient: false
             },
             description: 'Головы щучьи с чесноком да свежайшая сёмгушка',
             disabled: false,
@@ -59,7 +59,7 @@ const CardPage = () => {
                     count: 5,
                     value: 'мышей в подарок'
                 },
-                happyClient: true
+                happyClient: 'заказчик доволен'
             },
             description: 'Филе из цыплят с трюфелями в бульоне',
             disabled: true,

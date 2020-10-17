@@ -15,7 +15,7 @@ const Extra = (props) => {
                 {gift.value}
             </span>
             <span className={s.extraItem}>
-                {happyClient ? <span>{happyClient.text} </span> : ''}
+                {happyClient && <span>заказчик доволен </span>}
             </span>
         </div>
     )

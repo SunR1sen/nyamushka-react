@@ -22,7 +22,7 @@ const Card = (props) => {
             props.changeBottomText(true);
         }
 
-        if(props.selectDone) {
+        if (props.selectDone) {
             setCatDoesntLike(false)
         }
     }
@@ -34,25 +34,30 @@ const Card = (props) => {
     }
 
     return (
-        <div onMouseLeave={onMouseLeaveHandler} onMouseEnter={onMouseEnterHandler}
-             className={cl(s.cardBody, {[s.active]: props.selectDone}, {[s.disabled]: props.disabled})}
-             onClick={props.disabled ? null : clickHandler}>
-            {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverBody)} />}
-            <div className={s.cardTop}>
-                {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverTop)} />}
-                <div className={s.container}>
-                    <p className={s.cardTop_title}>
-                        {catDoesntLike ? <span className={s.catDontLike}>Котэ недоволен?</span> : 'Сказочное заморское яство'}
-                    </p>
-                </div>
-            </div>
+        <div className={s.cardInner}>
+            <div onMouseLeave={onMouseLeaveHandler} onMouseEnter={onMouseEnterHandler}
+                 className={cl(s.cardBody, {[s.active]: props.selectDone}, {[s.disabled]: props.disabled})}
+                 onClick={props.disabled ? null : clickHandler}>
 
-            <div className={s.container}>
-                <CardHeader name={props.name}/>
-                <Filling filling={props.filling} />
-                <Extra extra={props.extra} />
-                <Size size={props.size}/>
+                {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverBody)}/>}
+                {/*<div className={s.cardTop}>*/}
+                {/*    {props.disabled && <div className={cl(s.disabledCover, s.disabledCoverTop)} />}*/}
+                {/*    <div className={s.container}>*/}
+                {/*        <p className={s.cardTop_title}>*/}
+                {/*            {catDoesntLike ? <span className={s.catDontLike}>Котэ недоволен?</span> : 'Сказочное заморское яство'}*/}
+                {/*        </p>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+
+                {/*<div className={s.container}>*/}
+                {/*    <CardHeader name={props.name}/>*/}
+                {/*    <Filling filling={props.filling} />*/}
+                {/*    <Extra extra={props.extra} />*/}
+                {/*    <Size size={props.size}/>*/}
+                {/*</div>*/}
             </div>
+            <div className={s.corner}/>
+            <div className={s.corner2}/>
         </div>
     )
 }

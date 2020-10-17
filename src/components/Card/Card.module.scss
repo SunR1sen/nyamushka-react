@@ -7,29 +7,55 @@
   margin: 0 0 0 48px;
 }
 
+.cardInner {
+  position: relative;
+}
+
+.corner {
+  position: absolute;
+  top: 46px;
+  left: 14px;
+  width: 63px;
+  height: 4px;
+  background-color: $defaultBorderColor;
+  transform: rotate(-48deg);
+  transform-origin: 0 100%;
+}
+
+//.corner2 {
+//  position: absolute;
+//  top: 0;
+//  left: 10px;
+//  width: 46px;
+//  height: 4px;
+//  background-color: red;
+//}
+
 .cardBody {
   position: relative;
   cursor: pointer;
   width: 320px;
-  height: 439px;
+  height: 484px;
   margin: 70px 10px 0;
   background: $cardBgColor url("./catBg.png") no-repeat;
-  background-position: -5px 170px;
+  background-position: -5px 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-left: $borderSize solid $defaultBorderColor;
   border-right: $borderSize solid $defaultBorderColor;
   border-bottom: $borderSize solid $defaultBorderColor;
+  border-top: $borderSize solid $defaultBorderColor;
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 48.5px);
 
-  &:after {
-    content: '';
-    top: 0;
-    left: 0;
-    position: absolute;
-    transform: rotate(-44.5deg) translate(8px, -24.8px);
-    width: 64px;
-    border-top: $borderSize solid $defaultBorderColor;
-  }
+  //&:after {
+  //  content: '';
+  //  top: 0;
+  //  left: 0;
+  //  position: absolute;
+  //  transform: rotate(-44.5deg) translate(8px, -24.8px);
+  //  width: 64px;
+  //  border-top: $borderSize solid $defaultBorderColor;
+  //}
 
   &:hover {
     border-color: $defaultHoverBorderColor;

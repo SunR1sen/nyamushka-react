@@ -69,7 +69,7 @@ const CardPage = () => {
 
     return (
         <div className={s.cardPage}>
-            <h2 className={s.cardPageTitle}>Ты сегодня покормил кота?</h2>
+            <h2 className={s.cardPageTitle}>Ты сегодня покормил&nbsp;кота?</h2>
             <div className={s.cardPageContent}>
                 {data.map( card => (
                     <CardItem name={card.name} filling={card.filling} size={card.size} key={card.id} extra={card.extra}
